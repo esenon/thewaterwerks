@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Screen Cleaning - WaterWerks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    header {
+      background-color: #3167af;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-details {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-details h1 {
+      color: #001f3f;
+      margin-bottom: 10px;
+    }
+
+    .service-details p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .service-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003d7a;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Menu Bar -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Screen Cleaning</h1>
+    <p>Ensure a Clear View with Clean Window Screens</p>
+  </header>
+
+  <!-- Service Content -->
+  <section class="service-details">
+    <img src="screen/screen.jpeg" alt="Screen Cleaning" class="service-image">
+    
+    <h2>At WaterWerks, We Take Pride in Our Screen Cleaning Services</h2>
+    <p>Dirty window screens can ruin the appearance of your home or business and bring in dust and dirt. At WaterWerks, we offer professional screen cleaning services to keep your windows looking fresh and functional.</p>
+    
+    <p>We remove dust, dirt, and debris from your window screens and frames, restoring their clarity and efficiency. Whether it’s for a home or commercial property, our team ensures your screens are spotless and free from buildup, allowing for a clearer, more enjoyable view.</p>
+
+    <h3>What’s Included in Our Screen Cleaning Service?</h3>
+    <ul>
+      <li>Thorough removal of dirt, pollen, and grime from all types of window screens.</li>
+      <li>Gentle yet effective scrubbing using eco-friendly solutions.</li>
+      <li>Rinsing and drying to prevent streaks or residue buildup.</li>
+      <li>Optional cleaning of surrounding window sills and frames.</li>
+    </ul>
+
+    <p>Our professional-grade tools and experienced team will leave your screens looking like new. We take great care during the process to ensure no damage occurs to your screens or frames.</p>
+
+    <a href="contact.html" class="cta-button">Request a Quote</a>
+  </section>
+
+</body>
+</html>

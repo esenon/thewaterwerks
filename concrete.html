@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concrete and Brick - WaterWerks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    header {
+      background-color: #3167af;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-details {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-details h1 {
+      color: #001f3f;
+      margin-bottom: 10px;
+    }
+
+    .service-details p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .service-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003d7a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Menu Bar -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Concrete and Brick Pressure Washing</h1>
+    <p>Deep Cleaning for Patios, Sidewalks, Driveways and More. </p>
+  </header>
+
+  <section class="service-details">
+    <img src="concrete/concrete.jpg" alt="Concrete" class="service-image">
+    
+    <h2>At WaterWerks, We Restore Your Concrete to It's Former Glory</h2>
+    <p>Concrete and brick surfaces are built to last—but over time, they collect dirt, grime, algae, moss, and oil stains that can make them look worn and neglected.</p>
+    </p>
+    
+    <p>By using pressure and distance, we remove grime without damaging paint, finishes, or structural integrity. This service not only improves the appearance of your railing but also helps maintain its safety by preventing slippery buildup and surface deterioration.</p>
+    
+    
+    <h3>What’s Included in Our Concrete Pressure Washing Service?</h3>
+    <h3>Our powerful surface cleaners and pressure systems safely cut through tough stains on:</h3>
+    <ul>
+      <li>Driveways</li>
+      <li>Sidewalks</li>
+      <li>Patio</li>
+      <li>Brick steps and walkway</li>
+      <li>Walls</li>
+    </ul>
+
+   
+
+   
+    <p>With a commitment to safely clean, we take all precautions to protect the material while delivering a deep and even clean. The result is a fresh, bright finish that makes your property look polished and well-maintained. </p>
+    
+    <a href="contact.html" class="cta-button">Request a Quote</a>
+  </section>
+  
+
+</body>
+</html>

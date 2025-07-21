@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WaterWerks Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    header {
+      background-color: #3167af;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .services-overview {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .services-overview h1 {
+      color: #001f3f;
+      margin-bottom: 10px;
+    }
+
+    .services-overview p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .intro-paragraph {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .service-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .service-card a {
+      text-decoration: none;
+      color: #3167af;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Menu Bar -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Our Services</h1>
+    <p>Explore what WaterWerks can do for your home or business.</p>
+  </header>
+
+  <section class="services-overview">
+    <p class="intro-paragraph">
+      At WaterWerks, we specialize in transforming the exterior of your home or business with high-quality, reliable cleaning services. Whether you're dealing with dirt, algae, mildew, or general wear and tear, we bring surfaces back to life using safe and effective methods.<br><br>
+      We offer a range of exterior cleaning services tailored to your property’s unique needs—from concrete and brick pressure washing to detailed exterior window and screen cleaning. Our goal is simple: make your home or building look its absolute best while protecting the materials that make it beautiful.<br><br>
+      Explore our services below to see how WaterWerks can help restore and highlight your property’s appeal.
+    </p>
+
+    <!-- Service Cards -->
+    <div class="service-list">
+      <div class="service-card">
+        <img src="siding/siding.jpg" alt="Siding">
+        <div>
+          <h3>Siding Services</h3>
+          <p>Gentle power washing that eliminates mold, algae, and stains.</p>
+          <a href="siding.html">Learn More</a> <!-- Link to Siding page -->
+        </div>
+      </div>
+    <div class="service-card">
+            <img src="window/window.jpg" alt="Windows">
+            <div>
+              <h3>Exterior Window Cleaning</h3>
+              <p>Crystal-clear views using streak-free professional techniques.</p>
+              <a href="windows.html">Learn More</a> <!-- Link to Windows page -->
+            </div>
+          </div>
+          
+      <div class="service-card">
+        <img src="fence/fence.jpeg" alt="Railings">
+        <div>
+          <h3>Railing and Fencing Cleaning</h3>
+          <p>Pressure wash for improved safety and appearance.</p>
+          <a href="railing.html">Learn More</a> <!-- Link to Railing page -->
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="concrete/concretephoto.jpg" alt="Concrete" class="service-image">
+        <div>
+          <h3>Concrete & Brick</h3>
+          <p>Clean patios, sidewalks, and driveways for a fresh finish.</p>
+          <a href="concrete.html">Learn More</a> <!-- Link to Concrete page -->
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="screen/screen.jpeg" alt="Screens">
+        <div>
+          <h3>Screen Cleaning</h3>
+          <p>Restore clarity for screens and their frames by removing buildup.</p>
+          <a href="screen.html">Learn More</a> <!-- Link to Screens page -->
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+</body>
+</html>

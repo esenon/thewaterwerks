@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Railing Pressure Washing - WaterWerks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    header {
+      background-color: #3167af;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-details {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-details h1 {
+      color: #001f3f;
+      margin-bottom: 10px;
+    }
+
+    .service-details p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .service-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003d7a;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .before-after img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      flex: 1;
+      height: 300px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Menu -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Railing Pressure Washing</h1>
+    <p>Restore Your Railings</p>
+  </header>
+
+  <section class="service-details">
+    <!-- Main Image -->
+    <img src="fence/fence.JPG" alt="Railing Pressure Washing" class="service-image">
+
+    <!-- Service Description -->
+    <h2>Why Clean Your Railings?</h2>
+    <p>Railings are often overlooked when it comes to exterior cleaning, but they are constantly exposed to the elements. Our railing pressure washing service removes built-up dirt, rust stains, mildew, and algae, helping to improve both the appearance and safety of your property.</p>
+
+    <p>Whether you have metal, wood, or vinyl railings, our expert technicians use the appropriate pressure settings to safely clean and rejuvenate these surfaces without causing damage.</p>
+
+    <h3>What’s Included?</h3>
+    <ul>
+      <li>Thorough inspection of railing condition</li>
+      <li>Custom pressure settings for material type</li>
+      <li>Pre-treatment to loosen grime and growth</li>
+      <li>Spot-free rinse and cleanup</li>
+    </ul>
+
+    <!-- Before & After Section -->
+    <h3>Before & After</h3>
+    <div class="before-after">
+      <img src="fence/fencebefore.JPG" alt="Before Cleaning">
+      <img src="fence/fenceafter.JPG" alt="After Cleaning">
+    </div>
+
+    <a href="contact.html" class="cta-button">Request a Quote</a>
+
+</body>
+</html>

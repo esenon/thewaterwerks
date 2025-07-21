@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Window Washing - WaterWerks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    header {
+      background-color: #3167af;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-details {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-details h1 {
+      color: #001f3f;
+      margin-bottom: 10px;
+    }
+
+    .service-details p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .service-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003d7a;
+    }
+
+    /* Before & After Section */
+    .before-after {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      margin: 60px 0;
+    }
+
+    .before-after .image-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .before-after img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: #001f3f;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Menu Bar -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Window Washing</h1>
+    <p>Bring the Sparkle Back to Your Windows</p>
+  </header>
+
+  <section class="service-details">
+    <img src="window/window.jpg" alt="Window Washing" class="service-image">
+    
+    <h2>At WaterWerks, We Take Pride in Our Window Washing Services</h2>
+    <p>Windows are one of the first things people notice about your home or business. Let WaterWerks help you maintain crystal-clear views with our professional exterior window cleaning services.</p>
+    <p>We use a combination of proven techniques and state-of-the-art equipment to deliver streak-free, spotless windows and frames every time. Whether it’s a residential home or a commercial building, we provide meticulous care and attention to detail.</p>
+
+    <h3>What’s Included in Our Window Washing Service?</h3>
+    <ul>
+      <li>Use of state-of-the-art water purification systems to avoid streaks</li>
+      <li>Careful washing to ensure no damage to your windows.</li>
+      <li>Rinsing and cleaning of your sills and frames.</li>
+      <li>Removal of all debris and buildup, leaving your home spotless.</li>
+    </ul>
+
+    <p>Our team uses professional-grade equipment to give your home a fresh, clean appearance. We make sure to follow all safety protocols and take every precaution to protect your property during the cleaning process.</p>
+    
+    <a href="contact.html" class="cta-button">Request a Quote</a>
+
+    <!-- Before & After Section -->
+    <h3>Before & After</h3>
+    <div class="before-after">
+      <div class="image-container">
+        <img src="window/before.jpg" alt="Before Cleaning">
+        <p style="text-align: center; margin-top: 8px;">Before</p>
+      </div>
+      <div class="image-container">
+        <img src="window/after.jpg" alt="After Cleaning">
+        <p style="text-align: center; margin-top: 8px;">After</p>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <h3>Gallery</h3>
+    <div class="gallery">
+      <img src="window/IMG_4872.jpg" alt="Gallery Image 1">
+      <img src="window/IMG_4858.jpg" alt="Gallery Image 2">
+      <img src="siding/gallery3.jpg" alt="Gallery Image 3" />
+      <img src="window/IMG_4799.jpg" alt="Gallery Image 4">
+    </div>
+
+  </section>
+
+</body>
+</html>

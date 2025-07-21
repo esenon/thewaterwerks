@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WaterWerks Pressure Washing</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+ 
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- SEO Meta -->
+  <meta name="description" content="WaterWerks offers expert pressure washing & exterior window cleaning in the Quad Cities. Get a free quote today!" />
+  <meta name="apple-mobile-web-app-title" content="WaterWerks" />
+
+  <!-- Open Graph (Social Preview) -->
+  <meta property="og:title" content="WaterWerks Pressure Washing" />
+  <meta property="og:description" content="Expert exterior cleaning in the Quad Cities. Contact us now." />
+  <meta property="og:image" content="https://thewaterwerks.com/images/preview.jpg" />
+  <meta property="og:url" content="https://thewaterwerks.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #eee;
+      overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    .navbar {
+      background-color: #3167af;
+      height: auto;
+      position: relative;
+      top: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .location,
+    .phone-number {
+      font-size: 16px;
+      color: #001f3f;
+      font-weight: 600;
+    }
+
+    .logo-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo-container img {
+      height: 100px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: sticky;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    /* Dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  position: relative;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+  color: #3167af;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #001f3f;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #003f80;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+    .cta-button {
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003f80;
+    }
+
+    .dirty-section {
+      position: relative;
+      background-color: #3167af;
+      text-align: center;
+      color: white;
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dirty-section img {
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border: none;
+  padding: 0;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+    .dirty-section h1,
+    .dirty-section h2 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      margin: 0;
+    }
+
+    .dirty-section h1 {
+      top: 20%;
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .dirty-section h2 {
+      top: 45%;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+
+
+    #bubbleCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10; /* higher than image z-index */
+    }
+
+
+    .services-bar {
+      background-color: #cce0ff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .services-bar a {
+      color: #003366;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+
+    .services-bar a:hover {
+      font-size: 17px;
+      text-decoration: underline;
+    }
+
+    .content {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 36px;
+      color: #001f3f;
+      margin-bottom: 20px;
+    }
+
+    .content p,
+    .intro-paragraph {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .testimonials {
+      background: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #3167af;
+    }
+
+    .testimonials blockquote {
+      font-style: italic;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #001f3f;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer .footer-logo img {
+      width: 400px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    footer .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    footer .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer .footer-info {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+
+    footer .footer-info p {
+      margin-bottom: 10px;
+    }
+
+   
+
+    @media (max-width: 500px) {
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .logo-container img {
+        height: 80px;
+        margin: 10px 0;
+      }
+
+      .location,
+      .phone-number {
+        font-size: 14px;
+        margin: 5px 0;
+      }
+
+      .menu {
+        flex-direction: column;
+        padding: 10px 0;
+      }
+
+      .menu a {
+        margin: 8px 0;
+        font-size: 16px;
+      }
+
+      .dirty-section h1 {
+        font-size: 26px;
+        top: 15%;
+      }
+
+      .dirty-section h2 {
+        font-size: 18px;
+        top: 40%;
+      }
+
+      .services-bar {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .services-bar a {
+        margin: 8px 0;
+        display: inline-block;
+      }
+
+      .content h1 {
+        font-size: 28px;
+      }
+
+      .content p,
+      .intro-paragraph {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .testimonials h2 {
+        font-size: 24px;
+      }
+
+      .testimonials blockquote {
+        font-size: 16px;
+        padding: 0 15px;
+      }
+
+      footer .footer-logo img {
+        width: 250px;
+      }
+
+      footer .footer-info,
+      footer .footer-links {
+        font-size: 14px;
+      }
+
+      footer .footer-links a {
+        display: inline-block;
+        margin: 5px 10px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .dirty-section h1 {
+        font-size: 20px;
+        top: 10%;
+      }
+
+      .dirty-section h2 {
+        font-size: 16px;
+        top: 35%;
+      }
+
+      .menu a,
+      .services-bar a {
+        font-size: 14px;
+      }
+
+      .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .footer-info p {
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="navbar">
+    <div class="location">Quad Cities & Surrounding Areas</div>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="WaterWerks Logo" />
+    </div>
+    <div class="phone-number">Call or Text us at: (309) 507-6816</div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+      <a href="services.html" class="dropbtn">Services ▾</a>
+      <div class="dropdown-content">
+        <a href="siding.html">Siding Softwash</a>
+        <a href="windows.html">Window Cleaning</a>
+        <a href="concrete.html">Concrete & Brick Cleaning</a>
+        <a href="railing.html">Railings Pressure Washing</a>
+        <a href="screen.html">Screen Cleaning</a>
+      </div>
+    </div>
+    
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Dirty Section -->
+  <section class="dirty-section">
+    <img src="images/houseandlogo.jpg" alt="House and Logo" />
+    <canvas id="bubbleCanvas"></canvas>
+  </section>
+  
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Welcome to WaterWerks</h1>
+    <p>Your trusted experts for pressure washing and window cleaning.</p>
+    <p class="intro-paragraph">
+      At WaterWerks, we take pride in providing exceptional exterior cleaning services that go above and beyond. From sparkling clean windows to spotless driveways, we specialize in restoring the beauty of your property using the latest technology and techniques. Whether you’re looking to boost curb appeal, maintain your property, or prepare for a special event, we’re here to help. Our expert team is dedicated to delivering superior results that leave a lasting impression, ensuring that your home or business always looks its best.
+    </p>
+  </div>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <blockquote>"Just wanted to let you know we are very happy with the work your company did. You were focused and hard working. Everything looks good!" – The Moeller's</blockquote>
+    <blockquote>"Super responsive and thorough. Great customer service. Highly recommend for window cleaning!" – Lori A.</blockquote>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">
+      <img src="images/logolight.png" alt="WaterWerks Logo" />
+    </div>
+    <div class="footer-info">
+      <p>Serving the Quad Cities & Surrounding Areas</p>
+      <p>Hours: Mon-Fri: 9:00 - 7:00 PM | Sat: 9:00 AM - 3:00 PM</p>
+      <p>Contact us: (309) 430-5703</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      
+    </div>
+    <p>Website by <a href="https://esenon.github.io/YAKAMOZ/" target="_blank">YAKAMOZ DESIGN</a></p>
+  </footer>
+
+  <!-- Bubbles Script -->
+  <script>
+    const canvas = document.getElementById('bubbleCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Bubble {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        const scaleFactor = Math.min(canvas.width, canvas.height) / 800; // scale to screen size
+        this.radius = (Math.random() * 10 + 25) * scaleFactor;
+        this.dx = Math.random() * 2;
+        this.dy = (Math.random() - 0.5) * 2;
+        this.alpha = 1;
+        this.color = Math.random() < 0.5 ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 153, 255, 0.5)';
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      update() {
+        this.x += this.dx;
+        this.y += this.dy;
+        this.alpha -= 0.01;
+        this.radius *= 0.99;
+      }
+    }
+
+    let bubbles = [];
+
+    const dirtySection = document.querySelector('.dirty-section');
+    dirtySection.addEventListener('mousemove', (e) => {
+      const rect = dirtySection.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      for (let i = 0; i < 2; i++) {
+        const offsetX = (Math.random() - 0.5) * 10;
+        const offsetY = (Math.random() - 0.5) * 10;
+        bubbles.push(new Bubble(x + offsetX, y + offsetY));
+      }
+    });
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      bubbles = bubbles.filter(b => b.alpha > 0 && b.radius > 0);
+      bubbles.forEach(b => {
+        b.update();
+        b.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+  <!-- Fade-in Animation -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    faders.forEach(fader => observer.observe(fader));
+  </script>
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+  
+
+</body>
+</html>
