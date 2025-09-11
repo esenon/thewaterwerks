@@ -6,9 +6,9 @@
   <title>Contact WaterWerks</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" href="images/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -17,16 +17,17 @@
       background-color: #f9f9f9;
     }
 
+    /* Menu */
     .menu {
-  background-color: #001f3f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  position: sticky; /* keeps the menu visible on scroll */
-  top: 0;
-  z-index: 999;
-}
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
     .menu a {
       color: white;
@@ -59,6 +60,7 @@
       transform-origin: left;
     }
 
+    /* Header */
     header {
       background-color: #3167af;
       color: white;
@@ -66,10 +68,11 @@
       text-align: center;
     }
 
+    /* Contact Section */
     .contact-section {
       max-width: 800px;
       margin: 40px auto;
-      padding: 20px;
+      padding: 30px 20px;
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -89,6 +92,7 @@
       color: #3167af;
     }
 
+    /* Form Styling */
     form {
       margin-top: 30px;
     }
@@ -112,10 +116,16 @@
       cursor: pointer;
       font-size: 16px;
       font-weight: 600;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
       background-color: #003f80;
+    }
+
+    #formStatus {
+      margin-top: 12px;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -142,20 +152,61 @@
       <p><strong>Phone:</strong> (309) 430-5703</p>
       <p><strong>Email:</strong> Waterwerkspw@gmail.com</p>
       <p><strong>Service Area:</strong> Quad Cities & Surrounding Areas</p>
-      <p><strong>Work Hours:</strong> Monday–Friday | 9:00 PM – 7:00 PM | Saturday | 9:00 - 3:00</p>
-      <p> <strong>Call or Text:</strong> Anytime!</p>
+      <p><strong>Work Hours:</strong> Monday–Friday | 9:00 AM – 7:00 PM | Saturday | 9:00 AM - 3:00 PM</p>
+      <p><strong>Call or Text:</strong> Anytime!</p>
     </div>
 
-    <form>
-      <h2>Need a Quote? Send Us a Email</h2>
+    <form action="https://formspree.io/f/mandvkjl" method="POST" id="contactForm">
+      <h2>Need a Quote? Send Us a Message</h2>
+
       <input type="text" name="name" placeholder="Your Name" required />
-      <input type="text" name="number" placeholder="Your Phone Number" required />
+      <input type="text" name="phone" placeholder="Your Phone Number" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+      <!-- hidden honeypot for spam -->
+      <input type="text" name="_gotcha" style="display:none" autocomplete="off" />
+
       <button type="submit">Send Message</button>
+      <p id="formStatus"></p>
     </form>
   </section>
 
+  <!-- AJAX Submission -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.style.color = '#001f3f';
+      statusEl.textContent = 'Sending...';
+
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          statusEl.style.color = 'green';
+          statusEl.textContent = 'Message sent — thanks! We will contact you shortly.';
+          form.reset();
+        } else {
+          const errorData = await res.json();
+          statusEl.style.color = 'crimson';
+          statusEl.textContent = errorData.error || 'Submission failed. Please try again later.';
+        }
+      } catch (err) {
+        statusEl.style.color = 'crimson';
+        statusEl.textContent = 'Network error — please try again later.';
+        console.error(err);
+      }
+    });
+  </script>
+
 </body>
 </html>
-

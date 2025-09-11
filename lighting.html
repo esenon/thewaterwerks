@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LED Lighting - WaterWerks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;  /* SAME as first example */
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    header {
+      background-color: #3167af;
+      color: white;
+      padding: 20px;   /* SAME as first example */
+      text-align: center;
+    }
+
+    .service-details {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-details h1 {
+      color: #001f3f;
+      margin-bottom: 10px;
+    }
+
+    .service-details p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .service-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003d7a;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: #001f3f;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Menu Bar -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>
+    <h1>LED Lighting</h1>
+    <p>Brighten Your Home Year-Round</p>
+  </header>
+
+  <section class="service-details">
+    <img src="lighting/lighting.jpg" alt="LED Lighting" class="service-image">
+    
+    <h2>Year-Round LED Lighting for Every Occasion</h2>
+    <p>Our permanent LED lighting brings convenience, beauty, and energy efficiency to your home. With customizable colors and patterns, you can celebrate holidays, events, or simply enjoy elegant everyday lighting—all controlled from your phone.</p>
+
+    <h3>Why Choose WaterWerks LED Lighting?</h3>
+    <ul>
+      <li>Durable, weatherproof lights designed to last year-round.</li>
+      <li>Smartphone app control for colors, dimming, and patterns.</li>
+      <li>Energy-efficient LEDs that cut down on electricity costs.</li>
+      <li>Professional installation for a seamless look on your home.</li>
+      <li>16,000 different customizable colors</li>
+    </ul>
+
+    <p>Our LED lighting systems are built to stand out and impress.</p>
+    
+    <a href="contact.html" class="cta-button">Request a Quote</a>
+
+    <!-- Gallery Section -->
+    <h3>Gallery</h3>
+    <div class="gallery">
+      <img src="lighting/lighting1.jpg" alt="LED Gallery 1">
+      <img src="lighting/lighting2.jpg" alt="LED Gallery 2">
+      <img src="lighting/lighting3.jpg" alt="LED Gallery 3" />
+      <img src="lighting/lighting.jpg" alt="LED Gallery 4">
+    </div>
+
+  </section>
+
+</body>
+</html>
