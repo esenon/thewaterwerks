@@ -1,471 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WaterWerks Pressure Washing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WaterWerks — Winter Lighting Edition</title>
 
-  <!-- Favicon -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" href="images/site.webmanifest">
- 
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- SEO Meta -->
-  <meta name="description" content="WaterWerks offers expert pressure washing & exterior window cleaning in the Quad Cities. Get a free quote today!" />
-  <meta name="apple-mobile-web-app-title" content="WaterWerks" />
+  <meta name="description" content="WaterWerks Winter Lighting — professional holiday & year-round LED lighting installations in the Quad Cities." />
 
-  <!-- Open Graph (Social Preview) -->
-  <meta property="og:title" content="WaterWerks Pressure Washing" />
-  <meta property="og:description" content="Expert exterior cleaning in the Quad Cities. Contact us now." />
-  <meta property="og:image" content="https://thewaterwerks.com/images/preview.jpg" />
-  <meta property="og:url" content="https://thewaterwerks.com" />
+  <style>
+    /* Reset + base */
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    /* Reset + Base */
+* { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f3f7fb;
+  color: #112233;
+  line-height: 1.5;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+body.loaded { opacity: 1; }
 
- 
-</head>
-
-    <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #eee;
-      overflow-x: hidden;
-      opacity: 0;
-      transition: opacity 1.5s ease;
-    }
-
-    body.loaded {
-      opacity: 1;
-    }
-
-    .navbar {
-      background-color: #3167af;
-      height: auto;
-      position: relative;
-      top: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 30px;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .location,
-    .phone-number {
-      font-size: 16px;
-      color: #001f3f;
-      font-weight: 600;
-    }
-
-    .logo-container {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .logo-container img {
-      height: 100px;
-      width: auto;
-      max-width: 200px;
-      object-fit: contain;
-    }
-
-    .menu {
-      background-color: #001f3f;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 10px 0;
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      position: sticky;
-      transition: color 0.3s ease;
-    }
-
-    .menu a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 100%;
-      height: 2px;
-      background-color: #3167af;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-    }
-
-    .menu a:hover {
-      color: #3167af;
-    }
-
-    .menu a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    /* Dropdown menu */
-.dropdown {
-  position: relative;
-  display: inline-block;
+/* Navbar / Header */
+.navbar {
+  background-color: #3167af;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  color: #fff;
+  gap: 10px;
+}
+.location {
+  color: #dbe8ff;
+  font-weight: 600;
+  flex: 1 1 100%;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.logo-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+.logo-container img {
+  height: 72px;
+  max-width: 100%;
+}
+.phone-number {
+  flex: 1 1 100%;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 4px;
 }
 
-.dropbtn {
-  position: relative;
-  font-size: 18px;
-  color: white;
+.menu {
+  background-color: #001f3f;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 5px;
+  gap: 10px;
+}
+.menu a {
+  color: #fff;
   text-decoration: none;
-  margin: 0 20px;
-  transition: color 0.3s ease;
+  padding: 8px 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.menu a:hover {
+  background: rgba(255,255,255,0.06);
+  color: #cce0ff;
 }
 
-.dropbtn:hover {
-  color: #3167af;
+/* Dropdown */
+.menu .dropdown > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 8px 14px;
 }
 
+.dropdown { position: relative; }
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #001f3f;
-  min-width: 220px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-  z-index: 1000;
+  background: #001f3f;
+  min-width: 180px;
+  top: 36px;
+  left: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  z-index: 10;
 }
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a { display: block; padding: 10px 14px; color: #fff; text-decoration: none; }
+.dropdown-content a:hover { background: #003f80; }
 
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
+/* Services Bar */
+.services-bar {
+  background-color: #cce0ff;
+  text-align: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+.services-bar a {
+  color: #003366;
   text-decoration: none;
-  display: block;
-  text-align: left;
+  margin: 0 12px;
+  font-weight: 600;
   font-size: 16px;
+  transition: font-size 0.3s ease;
 }
+.services-bar a:hover { font-size: 17px; text-decoration: underline; }
 
-.dropdown-content a:hover {
-  background-color: #003f80;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-    .cta-button {
-      background-color: #3167af;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #003f80;
-    }
-
-    .dirty-section {
-      position: relative;
-      background-color: #3167af;
-      text-align: center;
-      color: white;
-      padding: 1rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .dirty-section img {
-  width: 100%;
-  max-width: 60%;
-  height: auto;
-  display: block;
-  margin: 0;
-  border: none;
-  padding: 0;
-  pointer-events: none;
+/* Hero */
+.hero {
   position: relative;
-  z-index: 1;
+  background: linear-gradient(180deg, rgba(49,103,175,0.06) 0%, rgba(255,250,245,0.02) 100%);
+  padding: 36px 18px 60px;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: start;
+}
+.hero-left { padding: 12px 6px; }
+.eyebrow {
+  color: #3167af;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+}
+.hero h1 { font-size: 40px; color: #001f3f; margin-bottom: 10px; line-height: 1.05; }
+.hero p.lead { font-size: 18px; margin-bottom: 18px; color: #263445; }
+
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.btn-primary {
+  background: linear-gradient(180deg,#3167af,#143d73);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(49,103,175,0.18);
+}
+.btn-primary:active { transform: translateY(1px); }
+.btn-ghost {
+  background: transparent;
+  border: 2px solid #3167af;
+  color: #3167af;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.hero-features { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+.feature-pill {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 14px rgba(17,34,51,0.06);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Contact card */
+.contact-card {
+  background: linear-gradient(180deg,#fff,#fbfdff);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(17,34,51,0.08);
+  border: 1px solid rgba(17,34,51,0.04);
+}
+.contact-card h3 { font-size: 18px; margin-bottom: 8px; color: #143d73; }
+.contact-card p { margin-bottom: 12px; color: #2b3b4a; font-size: 14px; }
+.form-row { display: flex; gap: 8px; margin-bottom: 8px; }
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d7e6fb;
+  font-size: 14px;
+  background: #fff;
+}
+textarea { min-height: 90px; resize: vertical; }
+.small-cta { display: flex; gap: 10px; justify-content: space-between; align-items: center; margin-top: 8px; }
+.phone-cta {
+  background: #ffe9d6;
+  color: #143d73;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Gallery + Services + Testimonials */
+.section { max-width: 1200px; margin: 34px auto; padding: 0 18px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(17,34,51,0.04);
+  border: 1px solid rgba(17,34,51,0.03);
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: block;
+}
+h2.section-title { color: #143d73; margin-bottom: 12px; font-size: 22px; }
+.other-services { display: flex; gap: 14px; margin-top: 18px; flex-wrap: wrap; align-items: center; }
+.service-pill { background: #e9f1ff; color: #143d73; padding: 10px 14px; border-radius: 12px; font-weight: 700; }
+
+/* Testimonials */
+blockquote {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(17,34,51,0.04);
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background: #001f3f;
+  color: #e2eefc;
+  padding: 28px 18px;
+}
+footer .footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+}
+footer > .footer-inner > div {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+footer img { width: 100%; max-width: 280px; height: auto; margin-bottom: 8px; }
+footer a { color: #cfe1ff; text-decoration: none; }
+footer p { margin-bottom: 8px; color: #d4e9ff; font-size: 14px; }
+
+/* Media Queries */
+@media (max-width: 1050px) { 
+  .hero-inner { grid-template-columns: 1fr; } 
+  .grid-3 { grid-template-columns: repeat(2, 1fr); } 
+}
+@media (max-width: 900px) {
+  .navbar { flex-direction: column; align-items: center; }
+  .location, .phone-number { flex: 1 1 auto; text-align: center; }
+  .logo-container img { height: 60px; }
+  footer .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+  footer > .footer-inner > div { flex: 1 1 100%; }
+  footer img { margin: 0 auto 8px; }
+}
+@media (max-width: 680px) { 
+  .menu { flex-wrap: wrap; gap: 6px; padding: 8px 10px; } 
+  .grid-3 { grid-template-columns: 1fr; } 
+  .hero h1 { font-size: 28px; } 
+  .logo-container img { height: 50px; } 
 }
 
 
 
-    .dirty-section h1,
-    .dirty-section h2 {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      margin: 0;
-    }
-
-    .dirty-section h1 {
-      top: 20%;
-      font-size: 40px;
-      font-weight: 700;
-    }
-
-    .dirty-section h2 {
-      top: 45%;
-      font-size: 22px;
-      font-weight: 400;
-    }
-
-
-
-    #bubbleCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 10; /* higher than image z-index */
-    }
-
-
-    .services-bar {
-      background-color: #cce0ff;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    .services-bar a {
-      color: #003366;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      font-size: 16px;
-      transition: font-size 0.3s ease;
-    }
-
-    .services-bar a:hover {
-      font-size: 17px;
-      text-decoration: underline;
-    }
-
-    .content {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .content h1 {
-      font-size: 36px;
-      color: #001f3f;
-      margin-bottom: 20px;
-    }
-
-    .content p,
-    .intro-paragraph {
-      font-size: 18px;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .testimonials {
-      background: #f9f9f9;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .testimonials h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #3167af;
-    }
-
-    .testimonials blockquote {
-      font-style: italic;
-      color: #333;
-      max-width: 700px;
-      margin: 0 auto 20px;
-      line-height: 1.5;
-    }
-
-    footer {
-      background: #001f3f;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    footer .footer-logo img {
-      width: 400px;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    footer .footer-links a {
-      color: #ccc;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 16px;
-    }
-
-    footer .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    footer .footer-info {
-      font-size: 16px;
-      margin: 20px 0;
-    }
-
-    footer .footer-info p {
-      margin-bottom: 10px;
-    }
-
-   
-
-    @media (max-width: 500px) {
-      .navbar {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-      }
-
-      .logo-container img {
-        height: 80px;
-        margin: 10px 0;
-      }
-
-      .location,
-      .phone-number {
-        font-size: 14px;
-        margin: 5px 0;
-      }
-
-      .menu {
-        flex-direction: column;
-        padding: 10px 0;
-      }
-
-      .menu a {
-        margin: 8px 0;
-        font-size: 16px;
-      }
-
-      .dirty-section h1 {
-        font-size: 26px;
-        top: 15%;
-      }
-
-      .dirty-section h2 {
-        font-size: 18px;
-        top: 40%;
-      }
-
-      .services-bar {
-        flex-direction: column;
-        padding: 15px;
-      }
-
-      .services-bar a {
-        margin: 8px 0;
-        display: inline-block;
-      }
-
-      .content h1 {
-        font-size: 28px;
-      }
-
-      .content p,
-      .intro-paragraph {
-        font-size: 16px;
-        padding: 0 10px;
-      }
-
-      .testimonials h2 {
-        font-size: 24px;
-      }
-
-      .testimonials blockquote {
-        font-size: 16px;
-        padding: 0 15px;
-      }
-
-      footer .footer-logo img {
-        width: 250px;
-      }
-
-      footer .footer-info,
-      footer .footer-links {
-        font-size: 14px;
-      }
-
-      footer .footer-links a {
-        display: inline-block;
-        margin: 5px 10px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .dirty-section h1 {
-        font-size: 20px;
-        top: 10%;
-      }
-
-      .dirty-section h2 {
-        font-size: 16px;
-        top: 35%;
-      }
-
-      .menu a,
-      .services-bar a {
-        font-size: 14px;
-      }
-
-      .cta-button {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-
-      .footer-info p {
-        font-size: 14px;
-      }
-    }
-
+    @media (max-width:1050px) { .hero-inner { grid-template-columns:1fr; } .grid-3 { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:680px) { .menu { flex-wrap:wrap; gap:6px; padding:8px 10px; } .grid-3 { grid-template-columns:1fr; } .hero h1 { font-size:28px; } .logo-container img { height:68px; } }
   </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="navbar">
+  <!-- Top navbar -->
+  <div class="navbar" role="navigation" aria-label="Top">
     <div class="location">Quad Cities & Surrounding Areas</div>
-    <div class="logo-container">
-      <img src="images/logo.png" alt="WaterWerks Logo" />
-    </div>
-    <div class="phone-number">Call or Text us at: (309) 507-6816</div>
+    <div class="logo-container"><img src="images/logo.png" alt="WaterWerks Logo"></div>
+    <div class="phone-number">Call / Text: <a href="tel:+13094305703" style="color:#fff; text-decoration:underline;">(309) 430-5703</a></div>
   </div>
 
-  <!-- Menu -->
-  <div class="menu">
+  <!-- Main menu -->
+  <nav class="menu" aria-label="Main menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <div class="dropdown">
-      <a href="services.html" class="dropbtn">Services ▾</a>
-      <div class="dropdown-content">
+    <div class="dropdown" aria-haspopup="true">
+      <a href="services.html">Services ▾</a>
+      <div class="dropdown-content" role="menu" aria-label="service links">
         <a href="siding.html">Siding Softwash</a>
         <a href="windows.html">Window Cleaning</a>
         <a href="concrete.html">Concrete & Brick Cleaning</a>
@@ -474,148 +323,157 @@
         <a href="lighting.html">LED Lighting</a>
       </div>
     </div>
-    
     <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Services bar -->
+  <div class="services-bar">
+    <a href="siding.html">Siding Softwash</a>
+    <a href="windows.html">Window Cleaning</a>
+    <a href="concrete.html">Concrete & Brick Cleaning</a>
+    <a href="railing.html">Railings Pressure Washing</a>
+    <a href="screen.html">Screen Cleaning</a>
+    <a href="lighting.html">LED Lighting</a>
   </div>
 
-  <!-- Dirty Section -->
-  <section class="dirty-section">
-    <img src="images/houseandlogo.jpg" alt="House and Logo" />
-    <canvas id="bubbleCanvas"></canvas>
+  <!-- Hero -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="eyebrow">Winter Lighting Edition</div>
+        <h1>Professional permanent exterior lighting</h1>
+        <p class="lead">Permanent LED installations - Installed once, enjoyed forever</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="contact.html">Request a Lighting Demo with Trained Salesmen</a>
+          <a class="btn-ghost" href="#gallery">Lighting Gallery</a>
+        </div>
+        <div class="hero-features">
+          <div class="feature-pill">Residential & Commercial</div>
+          <div class="feature-pill">Smartphone App Control</div>
+          <div class="feature-pill">Energy Efficient LEDs</div>
+          <p style="margin-top:16px; font-size:16px; color:#2b3b4a; line-height:1.55;">
+            WaterWerks brings professional, permanent LED lighting to homes and businesses throughout the Quad Cities. Our energy-efficient lights are fully programmable and controlled via smartphone, giving you complete customization for year-round beauty or seasonal displays. Designed for durability and easy maintenance, our installations not only enhance your property's curb appeal but also increase safety and value. Schedule a demo today and see how our expert team can transform your property with stunning, long-lasting illumination.
+          </p>
+          
+        </div>
+      
+      </div>
+
+      <aside class="contact-card" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Schedule a demo to learn more</h3>
+        <p>Tell us the best time to reach you and a brief note about the job — we’ll respond fast.</p>
+        <form id="leadForm" action="contact.html" method="get" onsubmit="return handleForm(event)">
+          <div class="form-row">
+            <input type="text" name="name" id="name" placeholder="Full name" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" name="phone" id="phone" placeholder="Phone (best contact)" required>
+          </div>
+          <div class="form-row">
+            <input type="email" name="email" id="email" placeholder="Email (optional)">
+          </div>
+          <div class="form-row">
+            <select name="service" id="service">
+              <option value="residential">Residential Lighting</option>
+              <option value="commercial">Commercial Lighting</option>
+              <option value="permanent">Permanent LED</option>
+              <option value="holiday">Thousands of color options</option>
+            </select>
+          </div>
+          <div>
+            <textarea name="details" id="details" placeholder="Short job details (roofline, gutters, number of fixtures)"></textarea>
+          </div>
+          <div class="small-cta">
+            <button type="submit" class="btn-primary">Request to book a demo</button>
+            <a class="phone-cta" href="tel:+13094305703" aria-label="Call WaterWerks">(309) 430-5703</a>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </header>
+
+  <!-- Gallery / Inspiration -->
+  <section id="gallery" class="section" aria-labelledby="gallery-title">
+    <h2 class="section-title" id="gallery-title">Lighting Facts & Gallery</h2>
+    <div class="grid-3">
+      <div class="card">
+        <img src="lighting/lighting1.jpg" alt="House with warm roofline lights">
+        <strong>Year round lighting</strong>
+        <p style="margin-top:8px; font-size:14px;">16000+ options of colors, Energy-efficient and professionally installed. </p>
+        
+      </div>
+      <div class="card">
+        <img src="lighting/lighting2.jpg" alt="Colorful programmable RGB tree lighting">
+        <strong>Programmable RGB Effects</strong>
+        <p style="margin-top:8px; font-size:14px;">Full-color schedules and remote control for dynamic displays and holidays.</p>
+      </div>
+      <div class="card">
+        <img src="lighting/lighting3.jpg" alt="Commercial facade lighting">
+        <strong>Commercial and Personal Facade</strong>
+        <p style="margin-top:8px; font-size:14px;">Large-scale installs for businesses or your home — safe & weatherproof.</p>
+      </div>
+    </div>
   </section>
-  
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1>Welcome to WaterWerks</h1>
-    <p>Your trusted experts for pressure washing and window cleaning.</p>
-    <p class="intro-paragraph">
-      At WaterWerks, we take pride in providing exceptional exterior cleaning services that go above and beyond. From sparkling clean windows to spotless driveways, we specialize in restoring the beauty of your property using the latest technology and techniques. Whether you’re looking to boost curb appeal, maintain your property, or prepare for a special event, we’re here to help. Our expert team is dedicated to delivering superior results that leave a lasting impression, ensuring that your home or business always looks its best.
-    </p>
-  </div>
+
+  <!-- Other services (smaller) -->
+  <section class="section" aria-labelledby="other-title">
+    <h2 class="section-title" id="other-title">Other Services</h2>
+    <div class="other-services" role="list">
+      <span class="service-pill">Siding Softwash</span>
+      <span class="service-pill">Window Cleaning</span>
+      <span class="service-pill">Concrete & Brick Cleaning</span>
+      <span class="service-pill">Railings Pressure Washing</span>
+      <span class="service-pill">Screen Cleaning</span>
+    </div>
+    <p style="margin-top:12px; color:#445566; font-size:14px;">We still offer our full exterior cleaning lineup. Book lighting now and add a seasonal pressure wash for maximum curb appeal.</p>
+  </section>
 
   <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <blockquote>"Just wanted to let you know we are very happy with the work your company did. You were focused and hard working. Everything looks good!" – The Moeller's</blockquote>
-    <blockquote>"Super responsive and thorough. Great customer service. Highly recommend for window cleaning!" – Lori A.</blockquote>
+  <section class="section" aria-labelledby="testimonials-title">
+    <h2 class="section-title" id="testimonials-title">What Our Customers Say</h2>
+    <div style="display:grid; gap:12px;">
+      <blockquote style="background:#fff; padding:16px; border-radius:10px; box-shadow:0 8px 20px rgba(17,34,51,0.04);">
+        "Just wanted to let you know we are very happy with the work your company did. You were focused and hard working. Everything looks good!" – The Moeller's
+      </blockquote>
+      <blockquote style="background:#fff; padding:16px; border-radius:10px; box-shadow:0 8px 20px rgba(17,34,51,0.04);">
+        "Super responsive and thorough. Great customer service. Highly recommend for window cleaning!" – Lori A.
+      </blockquote>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-logo">
-      <img src="images/logolight.png" alt="WaterWerks Logo" />
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div style="max-width:360px;">
+        <img src="images/logolight.png" alt="WaterWerks" style="width:100%; max-width:280px; height:auto; display:block; margin-bottom:8px;">
+        <p>Serving the Quad Cities & Surrounding Areas</p>
+        <p>Hours: Mon-Fri 9:00 - 7:00 | Sat 9:00 - 3:00</p>
+        <p>Contact: <a href="tel:+13094305703">(309) 430-5703</a></p>
+      </div>
+      <div style="flex:1;">
+        <h4 style="color:#cfe1ff; margin-bottom:8px;">Quick Links</h4>
+        <p><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="contact.html">Contact</a> · <a href="lighting.html">Lighting</a></p>
+        <p style="margin-top:12px; color:#d4e9ff;">Website by <a href="https://esenon.github.io/YAKAMOZ/" target="_blank">YAKAMOZ DESIGN</a></p>
+      </div>
+      <div style="width:220px;">
+        <h4 style="color:#cfe1ff; margin-bottom:8px;">Request a Demo with our trained salesmen</h4>
+        <p style="font-size:14px;">Prefer to text? Use: <a href="sms:+13094305703">(309) 430-5703</a></p>
+      </div>
     </div>
-    <div class="footer-info">
-      <p>Serving the Quad Cities & Surrounding Areas</p>
-      <p>Hours: Mon-Fri: 9:00 - 7:00 PM | Sat: 9:00 AM - 3:00 PM</p>
-      <p>Contact us: (309) 430-5703</p>
-    </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-      
-    </div>
-    <p>Website by <a href="https://esenon.github.io/YAKAMOZ/" target="_blank">YAKAMOZ DESIGN</a></p>
   </footer>
 
-  <!-- Bubbles Script -->
   <script>
-    const canvas = document.getElementById('bubbleCanvas');
-    const ctx = canvas.getContext('2d');
+    window.addEventListener('load', ()=>{ document.body.classList.add('loaded'); });
 
-    function resizeCanvas() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
+    // lightweight form handler — prevents actual navigation and shows a simple confirmation
+    function handleForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value || 'Customer';
+      alert('Thanks, ' + name + '! We received your request and will contact you shortly.');
+      return false;
     }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    class Bubble {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        const scaleFactor = Math.min(canvas.width, canvas.height) / 800; // scale to screen size
-        this.radius = (Math.random() * 10 + 25) * scaleFactor;
-        this.dx = Math.random() * 2;
-        this.dy = (Math.random() - 0.5) * 2;
-        this.alpha = 1;
-        this.color = Math.random() < 0.5 ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 153, 255, 0.5)';
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      update() {
-        this.x += this.dx;
-        this.y += this.dy;
-        this.alpha -= 0.01;
-        this.radius *= 0.99;
-      }
-    }
-
-    let bubbles = [];
-
-    const dirtySection = document.querySelector('.dirty-section');
-    dirtySection.addEventListener('mousemove', (e) => {
-      const rect = dirtySection.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      for (let i = 0; i < 2; i++) {
-        const offsetX = (Math.random() - 0.5) * 10;
-        const offsetY = (Math.random() - 0.5) * 10;
-        bubbles.push(new Bubble(x + offsetX, y + offsetY));
-      }
-    });
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      bubbles = bubbles.filter(b => b.alpha > 0 && b.radius > 0);
-      bubbles.forEach(b => {
-        b.update();
-        b.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
   </script>
-
-  <!-- Fade-in Animation -->
-  <script>
-    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
-    });
-
-    const faders = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    faders.forEach(fader => observer.observe(fader));
-  </script>
-  <script>
-    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
-    });
-  </script>
-  
 
 </body>
 </html>
