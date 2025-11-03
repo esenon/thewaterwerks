@@ -27,8 +27,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1090430079644528&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
-
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -132,6 +130,7 @@ body.loaded { opacity: 1; }
 .dropdown-content a:hover { background: #003f80; }
 
 /* Services Bar */
+
 .services-bar a {
   color: #003366;
   text-decoration: none;
@@ -317,7 +316,7 @@ footer p { margin-bottom: 8px; color: #d4e9ff; font-size: 14px; }
   <div class="navbar" role="navigation" aria-label="Top">
     <div class="location">Quad Cities & Surrounding Areas</div>
     <div class="logo-container"><img src="images/logo.png" alt="WaterWerks Logo"></div>
-    <div class="phone-number">Call / Text: <a href="tel:+13095076816" style="color:#fff; text-decoration:underline;">(309) 507-6816</a></div>
+    <div class="phone-number">Call / Text: <a href="tel:+13094305703" style="color:#fff; text-decoration:underline;">(309) 430-5703</a></div>
   </div>
 
   <!-- Main menu -->
@@ -338,7 +337,7 @@ footer p { margin-bottom: 8px; color: #d4e9ff; font-size: 14px; }
     <a href="contact.html">Contact</a>
   </nav>
 
-  
+
 
   <!-- Hero -->
   <header class="hero" role="banner">
@@ -348,7 +347,7 @@ footer p { margin-bottom: 8px; color: #d4e9ff; font-size: 14px; }
         <h1>Professional permanent exterior lighting</h1>
         <p class="lead">Permanent LED installations - Installed once, enjoyed forever</p>
         <div class="cta-row">
-          <a class="btn-primary" href="contact.html">Request a Lighting Demo with a Professional</a>
+          <a class="btn-primary" href="contact.html">Request a Lighting Demo with Trained Salesmen</a>
           <a class="btn-ghost" href="#gallery">Lighting Gallery</a>
         </div>
         <div class="hero-features">
@@ -366,32 +365,74 @@ footer p { margin-bottom: 8px; color: #d4e9ff; font-size: 14px; }
       <aside class="contact-card" aria-labelledby="contact-heading">
         <h3 id="contact-heading">Schedule a demo to learn more</h3>
         <p>Tell us the best time to reach you and a brief note about the job — we’ll respond fast.</p>
-        <form id="leadForm" action="contact.html" method="get" onsubmit="return handleForm(event)">
-          <div class="form-row">
-            <input type="text" name="name" id="name" placeholder="Full name" required>
-          </div>
-          <div class="form-row">
-            <input type="tel" name="phone" id="phone" placeholder="Phone (best contact)" required>
-          </div>
-          <div class="form-row">
-            <input type="email" name="email" id="email" placeholder="Email (optional)">
-          </div>
-          <div class="form-row">
-            <select name="service" id="service">
-              <option value="residential">Residential Lighting</option>
-              <option value="commercial">Commercial Lighting</option>
-              <option value="permanent">Permanent LED</option>
-              <option value="holiday">Thousands of color options</option>
-            </select>
-          </div>
-          <div>
-            <textarea name="details" id="details" placeholder="Short job details (roofline, gutters, number of fixtures)"></textarea>
-          </div>
-          <div class="small-cta">
-            <button type="submit" class="btn-primary">Request to book a demo</button>
-            <a class="phone-cta" href="tel:+13095076816" aria-label="Call WaterWerks">(309) 507-6816</a>
-          </div>
+        <form action="https://formspree.io/f/mandvkjl" method="POST" id="leadForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="text" name="phone" placeholder="Your Phone Number" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+        
+          <!-- New Service Selection -->
+          <label for="service" style="margin-top:10px; display:block; font-weight:500;">Service Needed</label>
+          <select name="service" id="service" required style="width:100%; padding:10px; margin-bottom:10px;">
+            <option value="Residential Lighting">Residential Lighting</option>
+            <option value="Commercial Lighting">Commercial Lighting</option>
+            <option value="Other">Other Service</option>
+          </select>
+        
+          <!-- Other Service Write-In (hidden unless "Other" is chosen) -->
+          <textarea name="other_service" id="otherServiceBox" rows="3" placeholder="Describe the service" style="display:none; margin-bottom:10px;"></textarea>
+        
+          <textarea name="message" rows="5" placeholder="Additional details (optional)"></textarea>
+        
+          <!-- Honeypot (spam protection) -->
+          <input type="text" name="_gotcha" style="display:none" autocomplete="off" />
+        
+          <button type="submit">Request a Free Quote</button>
         </form>
+        
+        <p id="homeFormStatus"></p>
+        
+        <script>
+          // Show/Hide Other Service Box
+          const serviceSelect = document.getElementById('service');
+          const otherBox = document.getElementById('otherServiceBox');
+          serviceSelect.addEventListener('change', () => {
+            otherBox.style.display = serviceSelect.value === 'Other' ? 'block' : 'none';
+          });
+        
+          // Formspree submit handler
+          const leadForm = document.getElementById('leadForm');
+          const homeStatus = document.getElementById('homeFormStatus');
+        
+          leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            homeStatus.style.color = '#001f3f';
+            homeStatus.textContent = 'Sending...';
+        
+            const data = new FormData(leadForm);
+        
+            try {
+              const res = await fetch(leadForm.action, {
+                method: leadForm.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+              });
+        
+              if (res.ok) {
+                homeStatus.style.color = 'green';
+                homeStatus.textContent = 'Message sent — thanks! We will contact you shortly.';
+                leadForm.reset();
+                otherBox.style.display = 'none';
+              } else {
+                homeStatus.style.color = 'crimson';
+                homeStatus.textContent = 'Submission failed. Please try again later.';
+              }
+            } catch (err) {
+              homeStatus.style.color = 'crimson';
+              homeStatus.textContent = 'Network error — please try again later.';
+            }
+          });
+        </script>
+        
       </aside>
     </div>
   </header>
@@ -453,7 +494,7 @@ footer p { margin-bottom: 8px; color: #d4e9ff; font-size: 14px; }
         <img src="images/logolight.png" alt="WaterWerks" style="width:100%; max-width:280px; height:auto; display:block; margin-bottom:8px;">
         <p>Serving the Quad Cities & Surrounding Areas</p>
         <p>Hours: Mon-Fri 9:00 - 7:00 | Sat 9:00 - 3:00</p>
-        <p>Contact: <a href="tel:+13095076816">(309) 507-6816</a></p>
+        <p>Contact: <a href="tel:+13094305703">(309) 430-5703</a></p>
       </div>
       <div style="flex:1;">
         <h4 style="color:#cfe1ff; margin-bottom:8px;">Quick Links</h4>
@@ -461,8 +502,8 @@ footer p { margin-bottom: 8px; color: #d4e9ff; font-size: 14px; }
         <p style="margin-top:12px; color:#d4e9ff;">Website by <a href="https://esenon.github.io/YAKAMOZ/" target="_blank">YAKAMOZ DESIGN</a></p>
       </div>
       <div style="width:220px;">
-        <h4 style="color:#cfe1ff; margin-bottom:8px;">Request a Demo with a Professional</h4>
-        <p style="font-size:14px;">Prefer to text? Use: <a href="sms:+13095076816">(309) 507-6816</a></p>
+        <h4 style="color:#cfe1ff; margin-bottom:8px;">Request a Demo with our trained salesmen</h4>
+        <p style="font-size:14px;">Prefer to text? Use: <a href="sms:+13094305703">(309) 430-5703</a></p>
       </div>
     </div>
   </footer>
